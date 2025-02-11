@@ -13,7 +13,7 @@ export default function FormOptions() {
         <FormOptionButton
           price="free"
           name="regular access"
-          ticketsLeft="20 left"
+          ticketsLeft="20/52"
           id={1}
           func={() => {
             handleButtonClick(1);
@@ -23,7 +23,7 @@ export default function FormOptions() {
         <FormOptionButton
           price="$50"
           name="VIP access"
-          ticketsLeft="20 left"
+          ticketsLeft="20/52"
           id={2}
           func={() => {
             handleButtonClick(2);
@@ -33,7 +33,7 @@ export default function FormOptions() {
         <FormOptionButton
           price="$150"
           name="VVIP access"
-          ticketsLeft="20 left"
+          ticketsLeft="20/52"
           id={3}
           func={() => {
             handleButtonClick(3);
