@@ -1,5 +1,10 @@
+import { useState } from "react";
+import StepOne from "./components/StepOne/StepOne";
+
 function App() {
-  return <h1>Conference Ticket Generator</h1>;
+  const [currentStep, setStep] = useState(1);
+
+  return <main>{currentStep === 1 && <StepOne />}</main>;
 }
 
 export default App;

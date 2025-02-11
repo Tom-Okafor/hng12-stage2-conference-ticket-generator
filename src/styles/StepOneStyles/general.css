@@ -1,0 +1,5 @@
+.step-one {
+    display: flex;
+    flex-direction: column;
+    gap: 46px;
+}
