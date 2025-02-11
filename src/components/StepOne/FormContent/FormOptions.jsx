@@ -2,7 +2,7 @@ import { useState } from "react";
 import FormOptionButton from "./FormOptionButton";
 
 export default function FormOptions() {
-  const [clickedButtonId, setClickedButtonId] = useState(null);
+  const [clickedButtonId, setClickedButtonId] = useState(1);
   function handleButtonClick(id) {
     setClickedButtonId(id);
   }

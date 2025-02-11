@@ -1,6 +1,13 @@
 import PropTypes from "prop-types";
 
-export default function FormOptionButton({ price, name, ticketsLeft, id, func, clickedId }) {
+export default function FormOptionButton({
+  price,
+  name,
+  ticketsLeft,
+  id,
+  func,
+  clickedId,
+}) {
   return (
     <button
       className={`form-option ${id === clickedId ? "selected" : ""}`}
@@ -10,11 +17,12 @@ export default function FormOptionButton({ price, name, ticketsLeft, id, func, c
       }}
     >
       <div className="form-option-category">
-        <p className="category-name">{name}</p>
-        <p className="available-tickets">{ticketsLeft}</p>
+        <p className="form-option-price">{price}</p>
+        <div className="form-option-details">
+          <p className="category-name">{name}</p>
+          <p className="available-tickets">{ticketsLeft}</p>
+        </div>
       </div>
-      <p className="form-option-price">{price}</p>
-
     </button>
   );
 }
