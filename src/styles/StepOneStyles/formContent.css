@@ -1,5 +1,3 @@
-
-
 * {
     box-sizing: border-box;
     margin: 0;
@@ -312,6 +310,12 @@
     outline: none;
 }
 
+.line {
+    width: 100%;
+    height: 4px;
+    background: #07373F;
+}
+
 @media screen and (min-width: 900px) {
 
     .form-content {
@@ -383,11 +387,7 @@
         display: block;
     }
 
-    .line {
-        width: 100%;
-        height: 4px;
-        background: #07373F;
-    }
+
 
     .form-options {
         min-height: 174px;
