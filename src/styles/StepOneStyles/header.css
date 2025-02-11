@@ -1,5 +1,7 @@
 @import url(https://db.onlinewebfonts.com/c/1a5c2d8bbd4e28d99a6efcbb9a5b378f?family=JejuMyeongjo);
 
+
+
 .header {
     box-sizing: border-box;
     display: flex;
@@ -7,12 +9,16 @@
     justify-content: space-between;
     align-items: center;
     padding: 12px 16px;
-    width: min(84vw, 1200px);
-    height: 76px;
+    width: 85.333vw;
+    height: 68px;
     background: rgba(5, 37, 44, 0.4);
     border: 1px solid #197686;
     backdrop-filter: blur(2px);
-    border-radius: 24px;
+    border-radius: 12px;
+    -webkit-border-radius: 12px;
+    -moz-border-radius: 12px;
+    -ms-border-radius: 12px;
+    -o-border-radius: 12px;
 }
 
 .header>img {
@@ -20,36 +26,9 @@
     height: 36px;
 }
 
+
 .header .menu {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    gap: 16px;
-    width: 341px;
-    height: 34px;
-}
-
-.menu a {
-    padding: 10px;
-    font-family: 'JejuMyeongjo', serif;
-    text-decoration: none;
-    font-weight: 400;
-    font-size: 18px;
-    line-height: 18px;
-    color: #B3B3B3;
-    transition: color 300ms ease-in-out;
-    -webkit-transition: color 300ms ease-in-out;
-    -moz-transition: color 300ms ease-in-out;
-    -ms-transition: color 300ms ease-in-out;
-    -o-transition: color 300ms ease-in-out;
-}
-
-.menu .active {
-    color: #fff
-}
-
-.menu a:hover:not(.active) {
-    color: #eee
+    display: none;
 }
 
 .header button {
@@ -58,10 +37,10 @@
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    padding: 16px 24px;
+    padding: 12px 16px;
     gap: 8px;
-    width: 169px;
-    height: 52px;
+    width: 141px;
+    height: 44px;
     background: #FFFFFF;
     border: 1px solid rgba(213, 234, 0, 0.1);
     border-radius: 12px;
@@ -72,11 +51,12 @@
     -o-transition: all 300 ease;
 }
 
+
 button span {
     font-family: 'JejuMyeongjo', serif;
     font-style: normal;
     font-weight: 400;
-    font-size: 15px;
+    font-size: 13px;
     line-height: 20px;
     display: flex;
     align-items: center;
@@ -107,5 +87,81 @@ button:hover {
 }
 
 button:hover span {
-        color: #D9D9D9;
+    color: #D9D9D9;
+}
+
+@media screen and (max-width: 320px) {
+    .header>img {
+        --width: 28.694%;
+        width: var(--width);
+        height: calc(var(--width) / 0.3921px);
+    }
+
+    .header button {
+        --width: 60%;
+        width: var(--width);
+    }
+
+    button span {
+        font-size: 12px;
+    }
+}
+
+@media screen and (min-width: 900px) {
+
+
+    .header {
+        width: min(84vw, 1200px);
+        height: 76px;
+        border-radius: 24px;
+    }
+
+    .header>img {
+        width: 91.79px;
+        height: 36px;
+    }
+
+    .header .menu {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: 16px;
+        width: 341px;
+        height: 34px;
+    }
+
+    .menu a {
+        padding: 10px;
+        font-family: 'JejuMyeongjo', serif;
+        text-decoration: none;
+        font-weight: 400;
+        font-size: 18px;
+        line-height: 18px;
+        color: #B3B3B3;
+        transition: color 300ms ease-in-out;
+        -webkit-transition: color 300ms ease-in-out;
+        -moz-transition: color 300ms ease-in-out;
+        -ms-transition: color 300ms ease-in-out;
+        -o-transition: color 300ms ease-in-out;
+    }
+
+    .menu .active {
+        color: #fff
+    }
+
+    .menu a:hover:not(.active) {
+        color: #eee
+    }
+
+    .header button {
+        padding: 16px 24px;
+        width: 169px;
+        height: 52px;
+    }
+
+    button span {
+        font-size: 15px;
+    }
+
+
 }
