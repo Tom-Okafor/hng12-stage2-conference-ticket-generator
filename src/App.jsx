@@ -1,9 +1,10 @@
 import StepOne from "./components/StepOne/StepOne";
+import StepTwo from "./components/StepTwo/StepTwo";
 
 function App() {
   return (
     <main>
-      <StepOne />
+      <StepTwo />
     </main>
   );
 }

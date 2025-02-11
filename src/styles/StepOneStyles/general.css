@@ -1,4 +1,4 @@
-.step-one {
+.step-one, .step-two {
     display: flex;
     flex-direction: column;
     gap: 46px;

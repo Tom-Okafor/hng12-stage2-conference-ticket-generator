@@ -1,0 +1,32 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+
+
+.step-two-form-body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 32px;
+}
+
+@media screen and (min-width: 900px) {
+
+    .step-two-form-body {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+        padding: 24px;
+        gap: 32px;
+        width: 604px;
+        height: 907px;
+        background: #08252B;
+        border: 1px solid #0E464F;
+        border-radius: 32px;
+    }
+}
