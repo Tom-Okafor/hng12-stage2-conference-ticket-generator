@@ -1,5 +1,5 @@
 import "../../styles/StepOneStyles/general.css";
-import Header from "./Header";
+import Header from "../General/Header";
 import FormContent from "./FormContent/FormContent";
 
 export default function StepOne() {
