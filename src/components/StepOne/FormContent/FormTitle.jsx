@@ -10,7 +10,7 @@ export default function FormTitle() {
       </div>
       <div className="form-title-details">
         <span>📍 Ikoyi, Lagos</span>
-        <span>| |</span>
+        <span className="span">| |</span>
         <span>March 15, 2025 | 7:00 PM</span>
       </div>
     </div>
