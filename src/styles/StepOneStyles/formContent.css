@@ -1,0 +1,13 @@
+.form-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 48px;
+    gap: 32px;
+    width: min(49vw, 700px);
+    height: 902px;
+    background: #041E23;
+    border: 1px solid #0E464F;
+    border-radius: 40px;
+}

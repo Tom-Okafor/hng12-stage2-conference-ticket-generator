@@ -1,8 +1,12 @@
 import "../../styles/StepOneStyles/general.css";
 import Header from "./Header";
+import FormContent from "./FormContent/FormContent";
 
 export default function StepOne() {
-  return <section className="step-one">
-    <Header />
-  </section>;
+  return (
+    <section className="step-one">
+      <Header />
+      <FormContent />
+    </section>
+  );
 }
