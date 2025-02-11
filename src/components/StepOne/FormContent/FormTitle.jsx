@@ -2,7 +2,7 @@ export default function FormTitle() {
   return (
     <div className="form-title">
       <div className="form-title-main">
-        <p className="form-title-main-heading">Techember Fest ”25</p>
+        <p className="form-title-main-heading" aria-label="Techember Fest 2025">Techember Fest ”25</p>
         <p className="form-title-main-text">
           Join us for an unforgettable experience at Techember Fest! Secure your
           spot now.

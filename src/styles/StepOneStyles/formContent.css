@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?&family=Road+Rage&family=Roboto&display=swap');
+
 * {
     box-sizing: border-box;
     margin: 0;
@@ -16,6 +18,7 @@
     background: #041E23;
     border: 1px solid #0E464F;
     border-radius: 40px;
+    margin-bottom: 68px;
 }
 
 .form-header {
@@ -156,12 +159,12 @@
 }
 
 .available-tickets {
-        font-family: 'Roboto';
-        font-style: normal;
-        font-weight: 400;
-        font-size: 12px;
-        line-height: 150%;    
-        color: #FAFAFA;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 150%;
+    color: #FAFAFA;
 }
 
 .selected.form-option {
@@ -183,18 +186,34 @@
     height: 80px;
 }
 
-.form-buttons {
+.form-input #select-label {
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 150%;
+    color: #FAFAFA;
+}
+
+.form-input #select-tickets {
     display: flex;
     flex-direction: row;
-    justify-content: center;
     align-items: center;
-    gap: 32px;
+    padding: 12px;
     width: 100%;
     height: 48px;
-    background: #041E23;
-    border: 1px solid #0E464F;
-    border-radius: 24px;
+    border: 1px solid #07373F;
+    border-radius: 12px;
+    background-color: transparent;
+    color: #FAFAFA;
 }
+
+#select-tickets:hover,
+#select-tickets:focus {
+    border: 2px solid #07373F;
+    outline: none;
+}
+
 
 .form-header-text-content {
     display: flex;
@@ -252,7 +271,7 @@
     font-family: 'Road Rage', sans-serif;
     font-style: normal;
     font-weight: 400;
-    font-size: 2.5rem;
+    font-size: 62px;
     line-height: 100%;
     text-align: center;
     color: #FAFAFA;

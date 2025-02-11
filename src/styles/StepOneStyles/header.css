@@ -1,3 +1,5 @@
+@import url(https://db.onlinewebfonts.com/c/1a5c2d8bbd4e28d99a6efcbb9a5b378f?family=JejuMyeongjo);
+
 .header {
     box-sizing: border-box;
     display: flex;
@@ -13,7 +15,7 @@
     border-radius: 24px;
 }
 
-.header > img {
+.header>img {
     width: 91.79px;
     height: 36px;
 }
@@ -71,12 +73,10 @@
 }
 
 button span {
-    width: 97px;
-    height: 20px;
-    font-family: 'JejuMyeongjo';
+    font-family: 'JejuMyeongjo', serif;
     font-style: normal;
     font-weight: 400;
-    font-size: 16px;
+    font-size: 15px;
     line-height: 20px;
     display: flex;
     align-items: center;
@@ -94,13 +94,18 @@ button img {
 }
 
 button:hover img {
-    transform: translateX(5px);
-    -webkit-transform: translateX(5px);
-    -moz-transform: translateX(5px);
-    -ms-transform: translateX(5px);
-    -o-transform: translateX(5px);
+    transform: rotate(-45deg);
+    -webkit-transform: rotate(-45deg);
+    -moz-transform: rotate(-45deg);
+    -ms-transform: rotate(-45deg);
+    -o-transform: rotate(-45deg);
 }
 
 button:hover {
-    background-color: #ddd;
+    background: #24A0B5;
+    border: 1px solid #D9D9D9;
+}
+
+button:hover span {
+        color: #D9D9D9;
 }

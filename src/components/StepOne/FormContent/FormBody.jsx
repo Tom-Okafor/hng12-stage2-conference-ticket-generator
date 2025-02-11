@@ -1,16 +1,16 @@
 import FormTitle from "./FormTitle";
 import FormOptions from "./FormOptions";
 import FormInput from "./FormInput";
-import FormButtons from "./FormButtons";
+import FormStepButtons from "../../General/FormStepButtons";
 
 export default function FormBody() {
   return (
-    <div className="form-body">
+    <div className="form-body" aria-label="Ticket Selection">
       <FormTitle />
       <div className="line"></div>
       <FormOptions />
       <FormInput />
-      <FormButtons />
+      <FormStepButtons btnOneText="Cancel" btnTwoText="Next" />
     </div>
   );
 }
