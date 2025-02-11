@@ -1,5 +1,7 @@
 * {
     box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
 
 .form-content {
@@ -102,9 +104,9 @@
 .form-option {
     display: flex;
     flex-direction: row;
+    justify-content: space-between;
     align-items: flex-start;
     padding: 8px;
-    gap: 8px;
     width: 44%;
     height: 65px;
     border: 1px solid #07373F;
@@ -116,6 +118,50 @@
     -moz-transition: all 300ms ease;
     -ms-transition: all 300ms ease;
     -o-transition: all 300ms ease;
+}
+
+.form-option-price {
+    padding: 8px;
+    width: 35%;
+    height: 38px;
+    background: #0E464F;
+    border: 1px solid #2BA4B9;
+    border-radius: 8px;
+    text-align: right;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 1rem;
+    line-height: 110%;
+    color: #FAFAFA;
+}
+
+.form-option-category {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 0px;
+    gap: 4px;
+}
+
+.category-name {
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 13px;
+    line-height: 150%;
+    text-transform: uppercase;
+    color: #FAFAFA;
+}
+
+.available-tickets {
+        font-family: 'Roboto';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 12px;
+        line-height: 150%;    
+        color: #FAFAFA;
 }
 
 .selected.form-option {

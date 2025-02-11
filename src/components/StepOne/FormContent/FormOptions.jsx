@@ -11,7 +11,9 @@ export default function FormOptions() {
       <p className="form-options-title">select ticket type:</p>
       <div className="form-options-body">
         <FormOptionButton
-          text="regular access"
+          price="free"
+          name="regular access"
+          ticketsLeft="20 left"
           id={1}
           func={() => {
             handleButtonClick(1);
@@ -19,7 +21,9 @@ export default function FormOptions() {
           clickedId={clickedButtonId}
         />
         <FormOptionButton
-          text="vip access"
+          price="$50"
+          name="VIP access"
+          ticketsLeft="20 left"
           id={2}
           func={() => {
             handleButtonClick(2);
@@ -27,7 +31,9 @@ export default function FormOptions() {
           clickedId={clickedButtonId}
         />
         <FormOptionButton
-          text="vvip access"
+          price="$150"
+          name="VVIP access"
+          ticketsLeft="20 left"
           id={3}
           func={() => {
             handleButtonClick(3);
