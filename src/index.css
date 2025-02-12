@@ -1,6 +1,12 @@
 @import url(https://db.onlinewebfonts.com/c/1a5c2d8bbd4e28d99a6efcbb9a5b378f?family=JejuMyeongjo);
 @import url('https://fonts.googleapis.com/css2?&family=Road+Rage&family=Roboto&display=swap');
 
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
 body {
   display: flex;
   flex-direction: column;
@@ -91,7 +97,7 @@ body {
 
   .form-button {
     width: 39%;
-}
+  }
 
 
 

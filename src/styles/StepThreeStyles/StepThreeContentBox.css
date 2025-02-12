@@ -1,0 +1,21 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.step-three-content-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0px;
+    gap: 24px;
+    width: 100%;
+    min-height: 794px;
+}
+
+@media screen and (min-width: 900px) {
+    .step-three-content-box {
+        min-height: 736px;
+    }
+}
