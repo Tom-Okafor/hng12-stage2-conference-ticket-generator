@@ -1,14 +1,11 @@
-import StepOne from "./components/StepOne/StepOne";
-import StepTwo from "./components/StepTwo/StepTwo"; 
-import StepThree from "./components/StepThree/StepThree";
+import { BrowserRouter } from "react-router-dom";
+import PageRoutes from "./routes/PageRoutes";
 
 function App() {
   return (
-    <main>
-      <StepOne />
-      <StepTwo />
-      <StepThree />
-    </main>
+    <BrowserRouter>
+      <PageRoutes />
+    </BrowserRouter>
   );
 }
 
