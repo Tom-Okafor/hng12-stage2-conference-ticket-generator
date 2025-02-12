@@ -7,13 +7,13 @@ export default function Header() {
     <header className="header">
       <img src="logo.png" alt="logo" />
       <div className="menu">
-        <NavLink to="/" activeClassName="active">
+        <NavLink to="/" activeclassname="active">
           Events
         </NavLink>
-        <NavLink to="/tickets" activeClassName="active">
+        <NavLink to="/tickets" activeclassname="active">
           My Tickets
         </NavLink>
-        <NavLink to="/about-project" activeClassName="active">
+        <NavLink to="/about-project" activeclassname="active">
           About Project
         </NavLink>
       </div>
