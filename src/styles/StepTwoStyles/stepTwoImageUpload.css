@@ -66,6 +66,15 @@
     opacity: 0;
 }
 
+.upload-input-holder:has(#upload-input:focus) {
+background: #0E464F;
+    border: 8px solid rgba(36, 160, 181, 0.5);
+}
+.upload-input-holder:has(#upload-input:hover) {
+background: #0E464F;
+    border: 6px solid rgba(36, 160, 181, 0.5);
+}
+
 .upload-instructions {
     font-family: 'Roboto';
     font-style: normal;
