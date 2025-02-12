@@ -5,6 +5,8 @@ import StepThree from "./components/StepThree/StepThree";
 function App() {
   return (
     <main>
+      <StepOne />
+      <StepTwo />
       <StepThree />
     </main>
   );

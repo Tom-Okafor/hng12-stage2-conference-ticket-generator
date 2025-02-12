@@ -1,0 +1,16 @@
+.step-three-ticket-details {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 14px;
+    position: absolute;
+    width: 260px;
+    height: 446px;
+    left: 20px;
+    top: 20px;
+    gap: 20px;
+    background: rgba(3, 30, 33, 0.1);
+    border: 1px solid #24A0B5;
+    backdrop-filter: blur(2px);
+    border-radius: 16px;
+}
