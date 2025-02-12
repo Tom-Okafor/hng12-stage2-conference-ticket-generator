@@ -1,17 +1,27 @@
 import "../../styles/StepOneStyles/header.css";
+import { NavLink, useNavigate } from "react-router-dom";
 
 export default function Header() {
+  const navigate = useNavigate();
   return (
     <header className="header">
       <img src="logo.png" alt="logo" />
       <div className="menu">
-        <a href="" className="active">
+        <NavLink to="/" activeClassName="active">
           Events
-        </a>
-        <a href="">My Tickets</a>
-        <a href="">About Project</a>
+        </NavLink>
+        <NavLink to="/tickets" activeClassName="active">
+          My Tickets
+        </NavLink>
+        <NavLink to="/about-project" activeClassName="active">
+          About Project
+        </NavLink>
       </div>
-      <button>
+      <button
+        onClick={() => {
+          navigate("/tickets");
+        }}
+      >
         <span>My Tickets</span>
         <img src="Line 5.png" alt="line" aria-hidden="true" />
       </button>

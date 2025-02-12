@@ -7,7 +7,7 @@ export default function PageRoutes() {
   return (
     <Routes>
       <Route path="/" element={<Events />} />
-      <Route path="/about-projecr" element={<About />} />
+      <Route path="/about-project" element={<About />} />
       <Route path="/tickets" element={<Tickets />} />
     </Routes>
   );
