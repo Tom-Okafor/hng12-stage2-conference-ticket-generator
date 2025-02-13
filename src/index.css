@@ -82,13 +82,66 @@ body {
   color: #ffffff;
 }
 
-.tickets {
+.tickets,
+.about {
   display: flex;
   min-height: 100vh;
   flex-direction: column;
   gap: 32px;
   width: 100%;
   align-items: center;
+}
+
+.about {
+  gap: 76px;
+  padding: 24px;
+}
+
+.about-text {
+  font-size: 16px;
+  font-family: 'Roboto', sans-serif;
+  line-height: 150%;
+  color: #ffffff;
+  white-space: pre-line;
+
+}
+
+.about-links {
+  display: flex;
+  gap: 32px;
+  padding: 16px 48px;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.about-links a {
+  padding: 12px 24px;
+  width: 215px;
+  border-radius: 8px;
+  -webkit-border-radius: 8px;
+  -moz-border-radius: 8px;
+  -ms-border-radius: 8px;
+  -o-border-radius: 8px;
+  border: 1px solid #24A0B5;
+  text-decoration: none;
+  font-family: 'Roboto', sans-serif;
+  color: #24A0B5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.about-links a:last-child {
+  color: #ffffff;
+  background-color: #24A0B5;
+}
+
+.fun-text {
+  font-size: 80px;
+  font-family: 'Roboto', sans-serif;
+  color: #ffffff;
+  line-height: 150%
 }
 
 .tickets-container {
@@ -112,6 +165,20 @@ body {
   font-weight: bolder;
 }
 
+.about-content {
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 48px;
+  gap: 32px;
+  width: clamp(200px, 80vw, 800px);
+  min-height: 1848px;
+  background: #041E23;
+  border: 1px solid #0E464F;
+  border-radius: 40px;
+}
 
 @media screen and (min-width: 900px) {
 
