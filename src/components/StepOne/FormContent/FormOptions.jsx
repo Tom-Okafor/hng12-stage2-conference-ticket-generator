@@ -4,11 +4,11 @@ import { useContext } from "react";
 import { FormDetailsContext } from "../../../context/FormDetailsContext";
 
 export default function FormOptions() {
-  const [clickedButtonId, setClickedButtonId] = useState(1);
-  const { dispatch } = useContext(FormDetailsContext);
-  function handleButtonClick(id) {
-    setClickedButtonId(id);
-  }
+  const {
+    state: { clickedButtonId },
+    dispatch,
+  } = useContext(FormDetailsContext);
+
   return (
     <div className="form-options">
       <p className="form-options-title">select ticket type:</p>
@@ -19,7 +19,7 @@ export default function FormOptions() {
           ticketsLeft="20/52"
           id={1}
           func={() => {
-            handleButtonClick(1);
+            dispatch({ type: "set clicked button id", payload: 1 });
             dispatch({ type: "select ticket type", payload: "Regular" });
           }}
           clickedId={clickedButtonId}
@@ -30,7 +30,7 @@ export default function FormOptions() {
           ticketsLeft="20/52"
           id={2}
           func={() => {
-            handleButtonClick(2);
+            dispatch({ type: "set clicked button id", payload: 2 });
             dispatch({
               type: "select ticket type",
               payload: "VIP",
@@ -44,7 +44,7 @@ export default function FormOptions() {
           ticketsLeft="20/52"
           id={3}
           func={() => {
-            handleButtonClick(3);
+            dispatch({ type: "set clicked button id", payload: 3 });
             dispatch({
               type: "select ticket type",
               payload: "VVIP",

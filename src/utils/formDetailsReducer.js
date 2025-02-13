@@ -30,5 +30,13 @@ export function formDetailsReducer(state, action) {
         imageError: null,
         loadingMessage: "Setting your image...",
       };
+    case "set email":
+      return { ...state, email: payload };
+    case "set name":
+      return { ...state, name: payload };
+    case "set request":
+      return { ...state, specialRequest: payload };
+      case 'set clicked button id':
+        return {...state, clickedButtonId: payload}
   }
 }

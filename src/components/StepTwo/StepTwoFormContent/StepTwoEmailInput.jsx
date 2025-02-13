@@ -3,9 +3,15 @@ import { useContext } from "react";
 import { FormDetailsContext } from "../../../context/FormDetailsContext";
 export default function StepTwoEmailInput() {
   const {
-    state: { emailError: error },
+    state: { emailError: error, email },
     dispatch,
   } = useContext(FormDetailsContext);
+  const handleEmailChange = (event) => {
+    const {
+      target: { value },
+    } = event;
+    dispatch({ type: "set email", payload: value });
+  };
   return (
     <section className="input-section">
       <label htmlFor="email-input">Enter your email *</label>
@@ -18,7 +24,11 @@ export default function StepTwoEmailInput() {
           placeholder="hello@avioflagos.io"
           aria-required="true"
           required
+          value={email}
           aria-invalid={error ? "true" : "false"}
+          onChange={(event) => {
+            handleEmailChange(event);
+          }}
         />
       </div>
       {error && (
