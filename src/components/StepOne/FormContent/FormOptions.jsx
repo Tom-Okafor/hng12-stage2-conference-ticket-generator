@@ -1,5 +1,5 @@
 import FormOptionButton from "./FormOptionButton";
-import { useContext } from "react";
+import { useContext, useEffect, useRef } from "react";
 import { FormDetailsContext } from "../../../context/FormDetailsContext";
 
 export default function FormOptions() {
@@ -13,6 +13,16 @@ export default function FormOptions() {
     dispatch,
   } = useContext(FormDetailsContext);
 
+  const regularRef = useRef(null);
+  const VIPRef = useRef(null);
+  const VVIPRef = useRef(null);
+
+  useEffect(() => {
+    if (!regularTicketsLeft) regularRef.current.disabled = true;
+    if (!VIPTicketsLeft) VIPRef.current.disabled = true;
+    if (!VVIPTicketsLeft) VVIPRef.current.disabled = true;
+  }, [regularTicketsLeft, VIPTicketsLeft, VVIPTicketsLeft]);
+
   return (
     <div className="form-options">
       <p className="form-options-title">select ticket type:</p>
@@ -25,9 +35,9 @@ export default function FormOptions() {
           func={() => {
             dispatch({ type: "set clicked button id", payload: 1 });
             dispatch({ type: "select ticket type", payload: "Regular" });
-            
           }}
           clickedId={clickedButtonId}
+          ref={regularRef}
         />
         <FormOptionButton
           price="$50"
@@ -42,6 +52,7 @@ export default function FormOptions() {
             });
           }}
           clickedId={clickedButtonId}
+          ref={VIPRef}
         />
         <FormOptionButton
           price="$150"
@@ -56,6 +67,7 @@ export default function FormOptions() {
             });
           }}
           clickedId={clickedButtonId}
+          ref={VVIPRef}
         />
       </div>
     </div>

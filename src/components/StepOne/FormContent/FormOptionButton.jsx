@@ -7,11 +7,13 @@ export default function FormOptionButton({
   id,
   func,
   clickedId,
+  ref,
 }) {
   return (
     <button
       className={`form-option ${id === clickedId ? "selected" : ""}`}
       id={id}
+      ref={ref}
       onClick={() => {
         func(id);
       }}
@@ -34,4 +36,5 @@ FormOptionButton.propTypes = {
   id: PropTypes.number.isRequired,
   func: PropTypes.func,
   clickedId: PropTypes.any,
+  ref: PropTypes.any,
 };

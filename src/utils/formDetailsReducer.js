@@ -73,6 +73,13 @@ export function formDetailsReducer(state, action) {
       localStorage.clickedButtonId = payload;
       return { ...state, clickedButtonId: payload };
     case "add ticket": {
+      const saveTicketsToLocalStorage = (tickets) => {
+        try {
+          localStorage.setItem("tickets", JSON.stringify(tickets));
+        } catch (error) {
+          console.error("Failed to save tickets:", error);
+        }
+      };
       const newTicket = {
         imageLink: state.imageLink,
         name: state.name,
@@ -84,7 +91,7 @@ export function formDetailsReducer(state, action) {
 
       const updatedTickets = [...state.tickets, newTicket];
 
-      localStorage.tickets = JSON.stringify(updatedTickets);
+      saveTicketsToLocalStorage(updatedTickets);
 
       return {
         ...state,
@@ -151,6 +158,8 @@ export function formDetailsReducer(state, action) {
         };
       }
       break;
+    case "reset ticket quantity":
+      return { ...state, ticketQuantity: 1 };
     default:
       console.warn(`Unknown action type: ${type}`);
       return state;
