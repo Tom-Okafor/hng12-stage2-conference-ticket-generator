@@ -9,4 +9,5 @@ export const intialState = {
   imageError: null,
   nameError: null,
   emailError: null,
+  loadingMessage: null
 };

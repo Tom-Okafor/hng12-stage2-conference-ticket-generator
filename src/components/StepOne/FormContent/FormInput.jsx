@@ -6,7 +6,6 @@ export default function FormInput() {
     state: { ticketQuantity },
     dispatch,
   } = useContext(FormDetailsContext);
-  console.log(ticketQuantity);
   const handleInputChange = (event) => {
     const {
       target: { value },

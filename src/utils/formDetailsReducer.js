@@ -15,5 +15,20 @@ export function formDetailsReducer(state, action) {
       return { ...state, ticketType: payload };
     case "select ticket quantity":
       return { ...state, ticketQuantity: payload };
+    case "set image link":
+      return {
+        ...state,
+        imageError: null,
+        loadingMessage: null,
+        imageLink: payload,
+      };
+    case "set image error":
+      return { ...state, imageError: payload, loadingMessage: null };
+    case "set image loading":
+      return {
+        ...state,
+        imageError: null,
+        loadingMessage: "Setting your image...",
+      };
   }
 }
