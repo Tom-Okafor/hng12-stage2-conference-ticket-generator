@@ -13,7 +13,7 @@ export default function StepThreeContentBox() {
         btnOneText="Book Another Ticket"
         btnTwoText="Download Ticket"
         btnOneClick={() => {
-          dispatch({ type: "" });
+          dispatch({ type: "reset" });
         }}
         clickfunction={() => {}}
       />

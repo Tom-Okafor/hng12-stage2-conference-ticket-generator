@@ -105,6 +105,35 @@ export function formDetailsReducer(state, action) {
         ],
       };
     }
+    case "reset":
+      localStorage.removeItem(
+        "currentStep",
+        "ticketQuantity",
+        "ticketType",
+        "name",
+        "email",
+        "specialRequest",
+        "imageLink",
+        "imageError",
+        "nameError",
+        "emailError",
+        "clickedButtonId"
+      );
+      return {
+        ...state,
+        currentStep: 1,
+        ticketQuantity: 1,
+        ticketType: "Regular",
+        name: "",
+        email: "",
+        specialRequest: "",
+        imageLink: null,
+        imageError: null,
+        nameError: null,
+        emailError: null,
+        loadingMessage: null,
+        clickedButtonId: 1,
+      };
     default:
       console.warn(`Unknown action type: ${type}`);
       return state;
