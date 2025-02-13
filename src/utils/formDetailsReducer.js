@@ -10,5 +10,7 @@ export function formDetailsReducer(state, action) {
     case "decrease step":
       scrollTo();
       return { ...state, currentStep: state.currentStep - 1 };
+    case "select ticket type":
+      return { ...state, ticketType: action.payload };
   }
 }
