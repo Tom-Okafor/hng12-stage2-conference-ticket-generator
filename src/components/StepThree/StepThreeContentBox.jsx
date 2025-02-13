@@ -15,6 +15,7 @@ export default function StepThreeContentBox() {
         btnOneClick={() => {
           dispatch({ type: "" });
         }}
+        clickfunction={() => {}}
       />
     </div>
   );

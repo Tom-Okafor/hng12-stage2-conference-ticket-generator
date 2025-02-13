@@ -33,6 +33,7 @@ export default function StepTwoFormBody() {
           if (isFormValid) {
             dispatch({ type: "stepIncrement" });
             dispatch({ type: "clear errors" });
+            dispatch({ type: "add ticket" });
           } else {
             if (!isEmailValid) {
               dispatch({

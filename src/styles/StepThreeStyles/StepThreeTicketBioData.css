@@ -16,7 +16,7 @@
     height: 100%;
     display: grid;
     grid-template-rows: 42px 42px 65px;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
     gap: 1px;
     background-color: #12464e;
 }
@@ -29,6 +29,9 @@
     align-items: flex-start;
     padding: 4px;
     gap: 4px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
 }
 
 .ticket-data:nth-of-type(5) {

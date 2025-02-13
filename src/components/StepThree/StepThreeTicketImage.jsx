@@ -1,5 +1,14 @@
-import '../../styles/StepThreeStyles/StepThreeTicketImage.css'
+import "../../styles/StepThreeStyles/StepThreeTicketImage.css";
+import { useContext } from "react";
+import { StepThreeTicketContext } from "../../context/stepThreeTicketContext";
 
 export default function StepThreeTicketImage() {
-    return <img  alt="Profile Image" className='ticket-image' />
+  const ticketData = useContext(StepThreeTicketContext);
+  return (
+    <img
+      src={ticketData.imageLink}
+      alt="Profile Image"
+      className="ticket-image"
+    />
+  );
 }

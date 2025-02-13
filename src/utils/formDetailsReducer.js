@@ -1,21 +1,31 @@
-const scrollTo = () => {
+const scrollToTop = () => {
   window.scrollTo({ top: 0, behavior: "smooth" });
 };
 
 export function formDetailsReducer(state, action) {
   const { type, payload } = action;
+
+  // Always scroll to top for step changes
+  if (type === "stepIncrement" || type === "decrease step") {
+    scrollToTop();
+  }
+
   switch (type) {
     case "stepIncrement":
-      scrollTo();
+      localStorage.currentStep = state.currentStep + 1;
       return { ...state, currentStep: state.currentStep + 1 };
     case "decrease step":
-      scrollTo();
+      localStorage.currentStep = state.currentStep - 1;
       return { ...state, currentStep: state.currentStep - 1 };
     case "select ticket type":
+      localStorage.ticketType = payload;
       return { ...state, ticketType: payload };
     case "select ticket quantity":
+      localStorage.ticketQuantity = payload;
       return { ...state, ticketQuantity: payload };
     case "set image link":
+      localStorage.removeItem("imageError");
+      localStorage.imageLink = payload;
       return {
         ...state,
         imageError: null,
@@ -23,18 +33,26 @@ export function formDetailsReducer(state, action) {
         imageLink: payload,
       };
     case "set image error":
+      localStorage.imageError = payload;
       return { ...state, imageError: payload, loadingMessage: null };
     case "set name error":
+      localStorage.nameError = payload;
       return { ...state, nameError: payload };
     case "set email error":
+      localStorage.emailError = payload;
       return { ...state, emailError: payload };
     case "clear name error":
+      localStorage.removeItem("nameError");
       return { ...state, nameError: null };
     case "clear email error":
+      localStorage.removeItem("emailError");
       return { ...state, emailError: null };
     case "clear image error":
+      localStorage.removeItem("imageError");
       return { ...state, imageError: null };
     case "clear errors":
+      localStorage.removeItem("emailError");
+      localStorage.removeItem("nameError");
       return { ...state, emailError: null, nameError: null };
     case "set image loading":
       return {
@@ -43,12 +61,52 @@ export function formDetailsReducer(state, action) {
         loadingMessage: "Setting your image...",
       };
     case "set email":
+      localStorage.email = payload;
       return { ...state, email: payload };
     case "set name":
+      localStorage.name = payload;
       return { ...state, name: payload };
     case "set request":
+      localStorage.specialRequest = payload;
       return { ...state, specialRequest: payload };
     case "set clicked button id":
+      localStorage.clickedButtonId = payload;
       return { ...state, clickedButtonId: payload };
+    case "add ticket": {
+      const newTicket = {
+        imageLink: state.imageLink,
+        name: state.name,
+        email: state.email,
+        ticketQuantity: state.ticketQuantity,
+        ticketType: state.ticketType,
+        specialRequest: state.specialRequest,
+      };
+
+      const updatedTickets = [...state.tickets, newTicket];
+
+      try {
+        localStorage.tickets = JSON.stringify(updatedTickets);
+      } catch (error) {
+        console.error("Failed to stringify tickets to localStorage:", error);
+      }
+
+      return {
+        ...state,
+        tickets: [
+          ...state.tickets,
+          {
+            imageLink: state.imageLink,
+            name: state.name,
+            email: state.email,
+            ticketQuantity: state.ticketQuantity,
+            ticketType: state.ticketType,
+            specialRequest: state.specialRequest,
+          },
+        ],
+      };
+    }
+    default:
+      console.warn(`Unknown action type: ${type}`);
+      return state;
   }
 }
