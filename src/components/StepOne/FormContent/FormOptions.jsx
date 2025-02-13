@@ -4,7 +4,12 @@ import { FormDetailsContext } from "../../../context/FormDetailsContext";
 
 export default function FormOptions() {
   const {
-    state: { clickedButtonId },
+    state: {
+      clickedButtonId,
+      VVIPTicketsLeft,
+      VIPTicketsLeft,
+      regularTicketsLeft,
+    },
     dispatch,
   } = useContext(FormDetailsContext);
 
@@ -15,18 +20,19 @@ export default function FormOptions() {
         <FormOptionButton
           price="free"
           name="regular access"
-          ticketsLeft="20/52"
+          ticketsLeft={`${regularTicketsLeft}/52`}
           id={1}
           func={() => {
             dispatch({ type: "set clicked button id", payload: 1 });
             dispatch({ type: "select ticket type", payload: "Regular" });
+            
           }}
           clickedId={clickedButtonId}
         />
         <FormOptionButton
           price="$50"
           name="VIP access"
-          ticketsLeft="20/52"
+          ticketsLeft={`${VIPTicketsLeft}/52`}
           id={2}
           func={() => {
             dispatch({ type: "set clicked button id", payload: 2 });
@@ -40,7 +46,7 @@ export default function FormOptions() {
         <FormOptionButton
           price="$150"
           name="VVIP access"
-          ticketsLeft="20/52"
+          ticketsLeft={`${VVIPTicketsLeft}/52`}
           id={3}
           func={() => {
             dispatch({ type: "set clicked button id", payload: 3 });

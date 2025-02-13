@@ -9,6 +9,7 @@ export default function StepThreeTicketImage() {
       src={ticketData.imageLink}
       alt="Profile Image"
       className="ticket-image"
+      crossOrigin="anonymous"
     />
   );
 }

@@ -84,29 +84,15 @@ export function formDetailsReducer(state, action) {
 
       const updatedTickets = [...state.tickets, newTicket];
 
-      try {
-        localStorage.tickets = JSON.stringify(updatedTickets);
-      } catch (error) {
-        console.error("Failed to stringify tickets to localStorage:", error);
-      }
+      localStorage.tickets = JSON.stringify(updatedTickets);
 
       return {
         ...state,
-        tickets: [
-          ...state.tickets,
-          {
-            imageLink: state.imageLink,
-            name: state.name,
-            email: state.email,
-            ticketQuantity: state.ticketQuantity,
-            ticketType: state.ticketType,
-            specialRequest: state.specialRequest,
-          },
-        ],
+        tickets: updatedTickets,
       };
     }
-    case "reset":
-      localStorage.removeItem(
+    case "reset": {
+      const keysToRemove = [
         "currentStep",
         "ticketQuantity",
         "ticketType",
@@ -117,8 +103,11 @@ export function formDetailsReducer(state, action) {
         "imageError",
         "nameError",
         "emailError",
-        "clickedButtonId"
-      );
+        "clickedButtonId",
+      ];
+
+      keysToRemove.forEach((key) => localStorage.removeItem(key));
+
       return {
         ...state,
         currentStep: 1,
@@ -134,6 +123,34 @@ export function formDetailsReducer(state, action) {
         loadingMessage: null,
         clickedButtonId: 1,
       };
+    }
+    case "set available tickets":
+      if (state.ticketType === "Regular") {
+        localStorage.regularTicketsLeft = JSON.stringify(
+          state.regularTicketsLeft - state.ticketQuantity
+        );
+        return {
+          ...state,
+          regularTicketsLeft: state.regularTicketsLeft - state.ticketQuantity,
+        };
+      } else if (state.ticketType === "VIP") {
+        localStorage.VIPTicketsLeft = JSON.stringify(
+          state.VIPTicketsLeft - state.ticketQuantity
+        );
+        return {
+          ...state,
+          VIPTicketsLeft: state.VIPTicketsLeft - state.ticketQuantity,
+        };
+      } else if (state.ticketType === "VVIP") {
+        localStorage.VVIPTicketsLeft = JSON.stringify(
+          state.VVIPTicketsLeft - state.ticketQuantity
+        );
+        return {
+          ...state,
+          VVIPTicketsLeft: state.VVIPTicketsLeft - state.ticketQuantity,
+        };
+      }
+      break;
     default:
       console.warn(`Unknown action type: ${type}`);
       return state;

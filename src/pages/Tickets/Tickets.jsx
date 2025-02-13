@@ -25,9 +25,12 @@ export default function Tickets() {
         )}
 
         {ticketData &&
-          ticketData.map((elem, index) => (
-            <StepThreeTicket key={index} ticketData={elem} />
-          ))}
+          ticketData.map(
+            (elem, index) =>
+              elem.imageLink && (
+                <StepThreeTicket key={index} ticketData={elem} />
+              )
+          )}
       </div>
     </main>
   );

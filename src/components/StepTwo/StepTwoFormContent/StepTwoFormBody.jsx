@@ -13,12 +13,16 @@ import useEmailRef from "../../../refs/useEmailRef";
 import useImageRef from "../../../refs/useImageRef";
 
 export default function StepTwoFormBody() {
-  const { dispatch } = useContext(FormDetailsContext);
+  const {
+    state: { imageLink },
+    dispatch,
+  } = useContext(FormDetailsContext);
   const { isFormValid, isEmailValid, isFileValid, isNameValid } =
     UseFormValidation();
   const nameRef = useNameRef();
   const emailRef = useEmailRef();
   const imageRef = useImageRef();
+
   return (
     <div className="step-two-form-body">
       <StepTwoImageUpload imageRef={imageRef} />
@@ -33,7 +37,11 @@ export default function StepTwoFormBody() {
           if (isFormValid) {
             dispatch({ type: "stepIncrement" });
             dispatch({ type: "clear errors" });
-            dispatch({ type: "add ticket" });
+            dispatch({ type: "set available tickets" });
+
+            if (imageLink) {
+              dispatch({ type: "add ticket" });
+            }
           } else {
             if (!isEmailValid) {
               dispatch({

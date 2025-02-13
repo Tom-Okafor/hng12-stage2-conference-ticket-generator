@@ -12,4 +12,7 @@ export const initialState = {
   loadingMessage: null,
   clickedButtonId: parseInt(localStorage.clickedButtonId) || 1,
   tickets: localStorage.tickets || [],
+  regularTicketsLeft: parseInt(localStorage.regularTicketsLeft) || 20,
+  VIPTicketsLeft: parseInt(localStorage.VIPTicketsLeft) || 20,
+  VVIPTicketsLeft: parseInt(localStorage.VVIPTicketsLeft) || 20,
 };
