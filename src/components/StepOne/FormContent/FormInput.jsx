@@ -1,4 +1,18 @@
+import { useContext } from "react";
+import { FormDetailsContext } from "../../../context/FormDetailsContext";
+
 export default function FormInput() {
+  const {
+    state: { ticketQuantity },
+    dispatch,
+  } = useContext(FormDetailsContext);
+  console.log(ticketQuantity);
+  const handleInputChange = (event) => {
+    const {
+      target: { value },
+    } = event;
+    dispatch({ type: "select ticket quantity", payload: value });
+  };
   return (
     <div className="form-input" aria-labelledby="select-label">
       <label htmlFor="select" id="select-label">
@@ -9,6 +23,10 @@ export default function FormInput() {
         name="tickets"
         id="select-tickets"
         list="ticket-quantity"
+        value={ticketQuantity}
+        onChange={(event) => {
+          handleInputChange(event);
+        }}
       />
       <datalist id="ticket-quantity">
         <option value="1">1</option>

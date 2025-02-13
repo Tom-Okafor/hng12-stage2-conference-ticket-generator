@@ -3,7 +3,8 @@ const scrollTo = () => {
 };
 
 export function formDetailsReducer(state, action) {
-  switch (action.type) {
+  const { type, payload } = action;
+  switch (type) {
     case "stepIncrement":
       scrollTo();
       return { ...state, currentStep: state.currentStep + 1 };
@@ -11,6 +12,8 @@ export function formDetailsReducer(state, action) {
       scrollTo();
       return { ...state, currentStep: state.currentStep - 1 };
     case "select ticket type":
-      return { ...state, ticketType: action.payload };
+      return { ...state, ticketType: payload };
+    case "select ticket quantity":
+      return { ...state, ticketQuantity: payload };
   }
 }

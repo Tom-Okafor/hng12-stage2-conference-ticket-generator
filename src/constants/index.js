@@ -1,6 +1,6 @@
 export const intialState = {
   currentStep: 1,
-  ticketQuantity: null,
+  ticketQuantity: 1,
   ticketType: "Regular",
   name: null,
   email: null,
