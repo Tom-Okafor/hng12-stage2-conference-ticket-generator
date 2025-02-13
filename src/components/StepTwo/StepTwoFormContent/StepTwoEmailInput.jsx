@@ -1,7 +1,8 @@
 import "../../../styles/StepTwoStyles/inputSection.css";
 import { useContext } from "react";
 import { FormDetailsContext } from "../../../context/FormDetailsContext";
-export default function StepTwoEmailInput() {
+import PropTypes from "prop-types";
+export default function StepTwoEmailInput({ emailRef }) {
   const {
     state: { emailError: error, email },
     dispatch,
@@ -22,6 +23,7 @@ export default function StepTwoEmailInput() {
           name="email-input"
           id="email-input"
           placeholder="hello@avioflagos.io"
+          ref={emailRef}
           aria-required="true"
           required
           value={email}
@@ -39,3 +41,7 @@ export default function StepTwoEmailInput() {
     </section>
   );
 }
+
+StepTwoEmailInput.propTypes = {
+  emailRef: PropTypes.any,
+};

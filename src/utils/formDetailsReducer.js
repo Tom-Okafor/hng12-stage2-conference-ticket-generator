@@ -24,6 +24,18 @@ export function formDetailsReducer(state, action) {
       };
     case "set image error":
       return { ...state, imageError: payload, loadingMessage: null };
+    case "set name error":
+      return { ...state, nameError: payload };
+    case "set email error":
+      return { ...state, emailError: payload };
+    case "clear name error":
+      return { ...state, nameError: null };
+    case "clear email error":
+      return { ...state, emailError: null };
+    case "clear image error":
+      return { ...state, imageError: null };
+    case "clear errors":
+      return { ...state, emailError: null, nameError: null };
     case "set image loading":
       return {
         ...state,
@@ -36,7 +48,7 @@ export function formDetailsReducer(state, action) {
       return { ...state, name: payload };
     case "set request":
       return { ...state, specialRequest: payload };
-      case 'set clicked button id':
-        return {...state, clickedButtonId: payload}
+    case "set clicked button id":
+      return { ...state, clickedButtonId: payload };
   }
 }

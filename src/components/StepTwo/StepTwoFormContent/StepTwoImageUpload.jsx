@@ -2,8 +2,9 @@ import "../../../styles/StepTwoStyles/stepTwoImageUpload.css";
 import { useContext } from "react";
 import { FormDetailsContext } from "../../../context/FormDetailsContext";
 import handleFileInputChange from "../../../utils/handleFileInputChange";
+import PropTypes from "prop-types";
 
-export default function StepTwoImageUpload() {
+export default function StepTwoImageUpload({ imageRef }) {
   const {
     state: { imageError: error, imageLink, loadingMessage },
     dispatch,
@@ -19,6 +20,7 @@ export default function StepTwoImageUpload() {
             id="upload-input"
             accept="image/*"
             required
+            ref={imageRef}
             aria-required="true"
             aria-invalid={error ? "true" : "false"}
             onChange={async (event) => {
@@ -31,7 +33,8 @@ export default function StepTwoImageUpload() {
               } else {
                 dispatch({
                   type: "set image error",
-                  payload: "Please upload a valid image type",
+                  payload:
+                    "Please upload a valid image type and check your connection.",
                 });
               }
             }}
@@ -64,3 +67,7 @@ export default function StepTwoImageUpload() {
     </div>
   );
 }
+
+StepTwoImageUpload.propTypes = {
+  imageRef: PropTypes.any,
+};

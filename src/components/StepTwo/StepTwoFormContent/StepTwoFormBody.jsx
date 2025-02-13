@@ -7,22 +7,62 @@ import StepTwoTextArea from "./StepTwoTextArea";
 import FormStepButtons from "../../General/FormStepButtons";
 import { useContext } from "react";
 import { FormDetailsContext } from "../../../context/FormDetailsContext";
+import { UseFormValidation } from "../../../hooks/UseFormValidation";
+import useNameRef from "../../../refs/useNameRef";
+import useEmailRef from "../../../refs/useEmailRef";
+import useImageRef from "../../../refs/useImageRef";
 
 export default function StepTwoFormBody() {
   const { dispatch } = useContext(FormDetailsContext);
-  
+  const { isFormValid, isEmailValid, isFileValid, isNameValid } =
+    UseFormValidation();
+  const nameRef = useNameRef();
+  const emailRef = useEmailRef();
+  const imageRef = useImageRef();
   return (
     <div className="step-two-form-body">
-      <StepTwoImageUpload />
+      <StepTwoImageUpload imageRef={imageRef} />
       <Line />
-      <StepTwoNameInput />
-      <StepTwoEmailInput />
+      <StepTwoNameInput nameRef={nameRef} />
+      <StepTwoEmailInput emailRef={emailRef} />
       <StepTwoTextArea />
       <FormStepButtons
         btnOneText="Back"
         btnTwoText="Get My Ticket"
         clickfunction={() => {
-          dispatch({ type: "stepIncrement" });
+          if (isFormValid) {
+            dispatch({ type: "stepIncrement" });
+            dispatch({ type: "clear errors" });
+          } else {
+            if (!isEmailValid) {
+              dispatch({
+                type: "set email error",
+                payload: "Please, enter a valid email.",
+              });
+              emailRef.current.focus();
+            } else {
+              dispatch({ type: "clear email error" });
+            }
+            if (!isNameValid) {
+              dispatch({
+                type: "set name error",
+                payload: "Please, enter a valid name.",
+              });
+              nameRef.current.focus();
+            } else {
+              dispatch({ type: "clear name error" });
+            }
+
+            if (!isFileValid) {
+              dispatch({
+                type: "set image error",
+                payload: "Please, upload a file.",
+              });
+              imageRef.current.focus();
+            } else {
+              dispatch({ type: "clear image error" });
+            }
+          }
         }}
         btnOneClick={() => {
           dispatch({ type: "decrease step" });

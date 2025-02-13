@@ -1,7 +1,8 @@
 import "../../../styles/StepTwoStyles/inputSection.css";
 import { useContext } from "react";
 import { FormDetailsContext } from "../../../context/FormDetailsContext";
-export default function StepTwoNameInput() {
+import PropTypes from "prop-types";
+export default function StepTwoNameInput({ nameRef }) {
   const {
     state: { nameError: error, name },
     dispatch,
@@ -23,6 +24,7 @@ export default function StepTwoNameInput() {
         id="name-input"
         className="input"
         required
+        ref={nameRef}
         aria-required="true"
         aria-labelledby="text-label"
         aria-invalid={error ? "true" : "false"}
@@ -39,3 +41,7 @@ export default function StepTwoNameInput() {
     </section>
   );
 }
+
+StepTwoNameInput.propTypes = {
+  nameRef: PropTypes.any,
+};

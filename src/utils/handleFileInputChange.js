@@ -12,8 +12,12 @@ export default async function handleFileInputChange(event) {
     "image/heif",
   ];
   if (!!file && fileType.includes(file.type)) {
-    const imageLink = await cloudinaryApiService(file);
-    return imageLink;
+    try {
+      const imageLink = await cloudinaryApiService(file);
+      return imageLink;
+    } catch (error) {
+      return !error;
+    }
   } else {
     return false;
   }
