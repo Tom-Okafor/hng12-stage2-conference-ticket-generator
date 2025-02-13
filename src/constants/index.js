@@ -6,4 +6,7 @@ export const intialState = {
   email: null,
   specialRequest: null,
   imageLink: null,
+  imageError: null,
+  nameError: null,
+  emailError: null,
 };

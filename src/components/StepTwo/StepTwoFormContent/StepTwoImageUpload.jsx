@@ -1,7 +1,12 @@
 import "../../../styles/StepTwoStyles/stepTwoImageUpload.css";
+import { useContext } from "react";
+import { FormDetailsContext } from "../../../context/FormDetailsContext";
 
 export default function StepTwoImageUpload() {
-  const condition = false;
+  const {
+    state: { imageError: error, imageLink },
+    dispatch,
+  } = useContext(FormDetailsContext);
   return (
     <div className="image-upload-box">
       <p className="image-upload-label">Upload Profile Photo</p>
@@ -12,6 +17,9 @@ export default function StepTwoImageUpload() {
             name="upload-image"
             id="upload-input"
             accept="image/*"
+            required
+            aria-required="true"
+            aria-invalid={error ? "true" : "false"}
           />
           <div className="upload-input-innerbox">
             <img src="icon.png" alt="icon" aria-hidden="true" />
@@ -19,7 +27,7 @@ export default function StepTwoImageUpload() {
               Drag and drop or click to upload
             </p>
           </div>
-          {condition && (
+          {imageLink && (
             <img
               src="https://th.bing.com/th/id/R.18f14463a91f8316ec8daea09ab5baaf?rik=1ONxPv6onaga7A&pid=ImgRaw&r=0"
               alt="image"
@@ -28,6 +36,11 @@ export default function StepTwoImageUpload() {
           )}
         </div>
       </div>
+      {error && (
+        <p className="errorMessage" aria-live="assertive">
+          {error}
+        </p>
+      )}
     </div>
   );
 }

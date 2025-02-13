@@ -41,15 +41,23 @@ textarea {
     outline: none;
 }
 
-::placeholder,
-input {
+::placeholder {
+    color: #AAAAAA;
+}
+
+input,
+textarea, .errorMessage {
     font-family: 'Roboto';
     font-style: normal;
     font-weight: 400;
     font-size: 16px;
     line-height: 150%;
     color: #FFFFFF;
+}
 
+.errorMessage {
+    color: red;
+    font-weight: bolder;
 }
 
 textarea::placeholder {
@@ -60,11 +68,13 @@ input {
     background-color: transparent;
 }
 
-.input:hover, textarea:hover {
+.input:hover,
+textarea:hover {
     border-width: 3px;
 }
 
-.input:focus, textarea:focus {
+.input:focus,
+textarea:focus {
     outline: 4px solid #07373F;
     border: none;
 }
