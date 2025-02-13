@@ -5,7 +5,9 @@ export default function Header() {
   const navigate = useNavigate();
   return (
     <header className="header">
-      <img src="logo.png" alt="logo" />
+      <NavLink to="/">
+        <img src="logo.png" alt="logo" />
+      </NavLink>
       <div className="menu">
         <NavLink to="/" activeclassname="active">
           Events
