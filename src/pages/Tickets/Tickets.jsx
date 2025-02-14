@@ -14,9 +14,9 @@ export default function Tickets() {
     ticketData = tickets;
   }
   return (
-    <main className="tickets" role="alert" aria-live="polite">
+    <main className="tickets">
       <Header />
-      <div className="tickets-container">
+      <div className="tickets-container" role="alert" aria-live="polite">
         {ticketData.length === 0 && (
           <p className="tickets-container-text">
             Your generated tickets will be displayed here. You do not have any

@@ -5,7 +5,6 @@ const scrollToTop = () => {
 export function formDetailsReducer(state, action) {
   const { type, payload } = action;
 
-  // Always scroll to top for step changes
   if (type === "stepIncrement" || type === "decrease step") {
     scrollToTop();
   }

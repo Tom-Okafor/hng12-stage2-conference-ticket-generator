@@ -4,7 +4,7 @@ import StepThreeContent from "./StepThreeContent";
 
 export default function StepThreeBody() {
   return (
-    <section className="step-three-body">
+    <section className="step-three-body" role="alert">
       <FormHeader title="Ready" step={3} />
       <StepThreeContent />
     </section>
