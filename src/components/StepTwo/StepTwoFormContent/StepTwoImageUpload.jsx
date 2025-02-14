@@ -55,12 +55,12 @@ export default function StepTwoImageUpload({ imageRef }) {
         </div>
       </div>
       {error && (
-        <p className="errorMessage" aria-live="assertive">
+        <p className="errorMessage" aria-live="polite" role="alert">
           {error}
         </p>
       )}
       {loadingMessage && (
-        <p className="loading-message" aria-live="assertive">
+        <p className="loading-message" aria-live="assertive" role="alert">
           {loadingMessage}
         </p>
       )}

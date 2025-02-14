@@ -34,7 +34,7 @@ export default function StepTwoEmailInput({ emailRef }) {
         />
       </div>
       {error && (
-        <p className="errorMessage" aria-live="assertive">
+        <p className="errorMessage" aria-live="assertive" role="alert">
           {error}
         </p>
       )}

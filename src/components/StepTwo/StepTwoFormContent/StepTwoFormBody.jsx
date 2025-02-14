@@ -57,7 +57,7 @@ export default function StepTwoFormBody() {
                 type: "set name error",
                 payload: "Please, enter a valid name.",
               });
-              nameRef.current.focus();
+             nameRef.current.focus();
             } else {
               dispatch({ type: "clear name error" });
             }
@@ -67,7 +67,7 @@ export default function StepTwoFormBody() {
                 type: "set image error",
                 payload: "Please, upload a file.",
               });
-              imageRef.current.focus();
+             imageRef.current.focus();
             } else {
               dispatch({ type: "clear image error" });
             }

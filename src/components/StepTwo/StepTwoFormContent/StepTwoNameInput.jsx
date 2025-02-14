@@ -34,7 +34,7 @@ export default function StepTwoNameInput({ nameRef }) {
         }}
       />
       {error && (
-        <p className="errorMessage" aria-live="assertive">
+        <p className="errorMessage" aria-live="assertive" role="alert">
           {error}
         </p>
       )}

@@ -3,7 +3,7 @@ import { aboutPageText } from "../../constants";
 
 export default function About() {
   return (
-    <main className="about">
+    <main className="about" role="alert" aria-live="polite">
       <Header />
       <section className="about-content">
         <p className="about-text">{aboutPageText}</p>

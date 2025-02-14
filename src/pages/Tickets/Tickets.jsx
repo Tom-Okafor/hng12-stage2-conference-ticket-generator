@@ -14,7 +14,7 @@ export default function Tickets() {
     ticketData = tickets;
   }
   return (
-    <main className="tickets">
+    <main className="tickets" role="alert" aria-live="polite">
       <Header />
       <div className="tickets-container">
         {ticketData.length === 0 && (
