@@ -122,6 +122,13 @@ export function formDetailsReducer(state, action) {
           ? "VIP"
           : state.VVIPTicketsLeft && "VVIP";
 
+      const setClickedButtonId = () =>
+        state.regularTicketsLeft
+          ? 1
+          : state.VIPTicketsLeft
+          ? 2
+          : state.VVIPTicketsLeft && 3;
+
       return {
         ...state,
         currentStep: 1,
@@ -135,7 +142,7 @@ export function formDetailsReducer(state, action) {
         nameError: null,
         emailError: null,
         loadingMessage: null,
-        clickedButtonId: 1,
+        clickedButtonId: setClickedButtonId(),
       };
     }
     case "set available tickets":
