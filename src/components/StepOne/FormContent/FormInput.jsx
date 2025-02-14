@@ -1,8 +1,7 @@
-import { useContext, useEffect } from "react";
+import { useContext } from "react";
 import { FormDetailsContext } from "../../../context/FormDetailsContext";
 
 export default function FormInput() {
-  // const [formInputError, setFormInputError] = useState(false);
   const {
     state: {
       ticketQuantity,
@@ -20,30 +19,6 @@ export default function FormInput() {
     dispatch({ type: "select ticket quantity", payload: value });
   };
 
-  useEffect(() => {
-    dispatch({ type: "reset ticket quantity" });
-  }, [ticketType]);
-
-  // function assignTicketQuantity(value) {
-  //   if (checkTicketAvailability()) {
-  //     setFormInputError(false);
-  //   } else {
-  //     setFormInputError(true);
-  //   }
-  // }
-
-  // function checkTicketAvailability() {
-  //   if (ticketType === "Regular" && regularTicketsLeft >= ticketQuantity) {
-  //     return true;
-  //   }
-  //   if (ticketType === "VIP" && VIPTicketsLeft >= ticketQuantity) {
-  //     return true;
-  //   }
-  //   if (ticketType === "VVIP" && VVIPTicketsLeft >= ticketQuantity) {
-  //     return true;
-  //   }
-  //   return false;
-  // }
   return (
     <div className="form-input" aria-labelledby="select-label">
       <label htmlFor="select" id="select-label">
@@ -127,10 +102,6 @@ export default function FormInput() {
           </select>
         )
       )}
-
-      {/* {formInputError && (
-        <p className="formInputError">Not enough tickets available</p>
-      )} */}
     </div>
   );
 }

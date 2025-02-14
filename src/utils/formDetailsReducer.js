@@ -18,7 +18,8 @@ export function formDetailsReducer(state, action) {
       return { ...state, currentStep: state.currentStep - 1 };
     case "select ticket type":
       localStorage.ticketType = payload;
-      return { ...state, ticketType: payload };
+      localStorage.ticketQuantity = 1;
+      return { ...state, ticketType: payload, ticketQuantity: 1 };
     case "select ticket quantity":
       localStorage.ticketQuantity = payload;
       return { ...state, ticketQuantity: payload };
