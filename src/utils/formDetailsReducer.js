@@ -115,11 +115,18 @@ export function formDetailsReducer(state, action) {
 
       keysToRemove.forEach((key) => localStorage.removeItem(key));
 
+      const setTicketType = () =>
+        state.regularTicketsLeft
+          ? "Regular"
+          : state.VIPTicketsLeft
+          ? "VIP"
+          : state.VVIPTicketsLeft && "VVIP";
+
       return {
         ...state,
         currentStep: 1,
         ticketQuantity: 1,
-        ticketType: "Regular",
+        ticketType: setTicketType(),
         name: "",
         email: "",
         specialRequest: "",
