@@ -1,4 +1,4 @@
-import "../../../styles/StepTwoStyles/StepTwoFormBody.css";
+import "../../../styles/StepTwoStyles/stepTwoFormBody.css";
 import StepTwoImageUpload from "./StepTwoImageUpload";
 import Line from "../../General/Line";
 import StepTwoNameInput from "./StepTwoNameInput";

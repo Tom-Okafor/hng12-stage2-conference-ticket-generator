@@ -1,6 +1,6 @@
 import "../../styles/StepOneStyles/general.css";
 import Header from "../General/Header";
-import StepTwoFormContent from "./StepTwoFormContent/StepTwoFormContent";
+import StepTwoFormContent from "./StepTwoFormContent/stepTwoFormContent";
 export default function StepTwo() {
   return (
     <section className="step-two">
