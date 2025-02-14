@@ -102,7 +102,6 @@ export function formDetailsReducer(state, action) {
       const keysToRemove = [
         "currentStep",
         "ticketQuantity",
-        "ticketType",
         "name",
         "email",
         "specialRequest",
@@ -110,7 +109,6 @@ export function formDetailsReducer(state, action) {
         "imageError",
         "nameError",
         "emailError",
-        "clickedButtonId",
       ];
 
       keysToRemove.forEach((key) => localStorage.removeItem(key));
