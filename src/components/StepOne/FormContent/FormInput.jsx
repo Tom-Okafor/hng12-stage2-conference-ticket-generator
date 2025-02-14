@@ -22,7 +22,7 @@ export default function FormInput() {
 
   useEffect(() => {
     dispatch({ type: "reset ticket quantity" });
-  }, [ticketType, dispatch]);
+  }, [ticketType]);
 
   // function assignTicketQuantity(value) {
   //   if (checkTicketAvailability()) {

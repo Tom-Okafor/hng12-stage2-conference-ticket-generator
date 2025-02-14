@@ -3,9 +3,9 @@ import { aboutPageText } from "../../constants";
 
 export default function About() {
   return (
-    <main className="about" >
+    <main className="about">
       <Header />
-      <section className="about-content">
+      <section className="about-content" role="alert" aria-live="polite">
         <p className="about-text">{aboutPageText}</p>
         <p className="fun-text">💛 Enjoy</p>
         <div className="about-links">
